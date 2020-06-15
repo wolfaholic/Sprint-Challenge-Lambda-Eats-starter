@@ -1,6 +1,7 @@
 import React from "react";
-import { Button, Navbar, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, CardGroup, CardColumns, Row, Col, Progress, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Route, Link } from 'react-router-dom'
+import { Button, Navbar, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, CardGroup, CardColumns, Row, Col, Progress, } from 'reactstrap';
+import { Route, Link } from 'react-router-dom';
+import { OrderForm } from './Form.js'
 
 const App = () => {
   return (
@@ -18,9 +19,11 @@ const App = () => {
     <Card>
       <CardImg src={require('./Assets/Pizza.jpg')} />
       <h1 style={{color: 'white', position: 'absolute', left:'35%', top:'40%'}}>Your favorite food, delivered while coding</h1>
+      <Link to={'/pizza'}>
       <Button color="danger" size="lg" style={{position: 'absolute', left:'50%', top:'50%'}} >
       Pizza?
       </Button>
+      </Link>
     </Card>
     
 
@@ -102,11 +105,17 @@ const App = () => {
       </Col>
   </Row>
   </Route>
-<Route path='/pizza'>
+    
+    <Route path='/pizza'>
+    <OrderForm />
+
+    </Route>
 
 
-</Route>
+
+
 </>
-  );
-};
+ 
+  )
+}
 export default App;
